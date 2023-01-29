@@ -1,0 +1,85 @@
+.menuContainer {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #fff;
+  border-radius: 2rem;
+  min-height: 30rem;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 20px ;
+
+}
+.food {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px #b9b9b9b5;
+  .foodInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 8rem;
+    .foodName {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .foodDesc {
+      font-size: 1rem;
+      font-style: italic;
+      color: #333;
+    }
+    .foodPrice {
+      color: goldenrod;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+  .foodCalculator {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    .amountForm {
+      display: flex;
+      align-items: center;
+      width: 10rem;
+      padding-bottom: 1rem;
+      .amountLabel {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .amountInput{
+        width: 3rem;
+        border: none;
+        background: #7d7d7d;;
+        border-radius: 1rem;
+        padding: .5rem;
+        &:focus{
+            outline: none;
+        }
+      }
+      
+    }
+    .amountButton{
+        width: 10rem;
+        height: 2.5rem;
+        background-color:  rgb(144, 45, 9);
+        border-radius: 2rem;
+        outline: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        transition: all ease .5s;
+        &:hover{
+            top: 1px;
+        }
+    }
+  }
+}

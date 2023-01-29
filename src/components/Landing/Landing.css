@@ -1,0 +1,10 @@
+.Banner{
+    background-image: url(../../assets/Banner.jpg);
+    width: 100vw;
+    height: 70vh;
+    background-size: cover ;
+    background-position: bottom ;
+    clip-path: polygon(0 0 , 100% 0 , 100% 80%,0 100%);
+    z-index: 1;
+    position: relative;
+}
