@@ -15,7 +15,6 @@ const BasketMenuItem = (props) => {
     };
     props.onAdd(obj);
   };
-  console.log(props);
   const onAdd = () => {
     const obj = {
       id: pData.id,

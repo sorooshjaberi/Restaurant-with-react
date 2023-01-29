@@ -5,7 +5,6 @@ import './Navigation.scss'
 
 const Basket = (props) => {
   const [total, setTotal] = useState(0);
-  console.log();
   let tot = 0;
   if (props.foods.length) {
     for (const food of props.foods) {
