@@ -7,22 +7,20 @@ import { useState } from "react";
 import BackDrop from "../UI/BackDrop";
 import BasketModal from "../Basket/BasketModal";
 const Navigation = (props) => {
-  const [showBasket, setShowBasket] = useState(true);
+  const [showBasket, setShowBasket] = useState(false);
   const openBasket = () => {
     setShowBasket(true);
   };
   const closeBasket = () => {
     setShowBasket(false);
   };
-  const onSub = (a) => {
-    props.onSub(a);
-  };
+
   const onAdd = (a) => {
     props.onAdd(a);
   };
   const openedBasket = showBasket && (
     <BackDrop onClick={closeBasket}>
-      <BasketModal onAdd={onAdd} onSub={onSub} data={props.foods} />
+      <BasketModal onClose={closeBasket} onAdd={onAdd}  data={props.foods} />
     </BackDrop>
   );
 

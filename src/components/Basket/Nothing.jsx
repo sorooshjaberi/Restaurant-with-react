@@ -2,7 +2,7 @@ import React from 'react'
 
 const Nothing = () => {
   return (
-    <div>Nothing</div>
+    <div className='nothing'>Nothing</div>
   )
 }
 

@@ -8,6 +8,26 @@
   background-color: #fff;
   border-radius: 1rem;
   padding: 1.5rem;
+
+  .closeButton{
+    width: 7rem;
+    height: 4rem;
+    border-radius: 1rem;
+    background-color:#902d09 ;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.4rem;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 2rem 2rem;
+    
+  }
 }
 .BMenuItem {
   height: 10rem;
@@ -59,11 +79,8 @@
       width: 4rem;
       text-align: 2rem;
       display: inline-block;
-      background-color: rgb(144, 45, 9);
+      background-color: #902d09;
       border-radius: 5rem;
-      //   display: flex;
-      //   align-items: center;
-      //   justify-content: center;
       font-size: 4rem;
       color: white;
       font-weight: bold;
@@ -77,48 +94,16 @@
         transform: translate(-50%, -55%);
       }
     }
-    // display: flex;
-    // flex-direction: column;
-    // align-items: flex-end;
-    // justify-content: center;
-    // .amountForm {
-    //   display: flex;
-    //   align-items: center;
-    //   width: 10rem;
-    //   padding-bottom: 1rem;
-    //   .amountLabel {
-    //     font-size: 1.5rem;
-    //     font-weight: bold;
-    //     margin-right: 10px;
-    //   }
-    //   .amountInput {
-    //     width: 3rem;
-    //     border: none;
-    //     background: #7d7d7d;
-    //     border-radius: 1rem;
-    //     padding: 0.5rem;
-    //     &:focus {
-    //       outline: none;
-    //     }
-    //   }
-    // }
-    // .amountButton {
-    //   width: 10rem;
-    //   height: 2.5rem;
-    //   background-color: rgb(144, 45, 9);
-    //   border-radius: 2rem;
-    //   outline: none;
-    //   border: none;
-    //   font-size: 1.5rem;
-    //   color: #fff;
-    //   font-weight: bold;
-    //   text-align: center;
-    //   position: relative;
-    //   cursor: pointer;
-    //   transition: all ease 0.5s;
-    //   &:hover {
-    //     top: 1px;
-    //   }
-    // }
+
   }
+}
+.nothing{
+  color: #333;
+  font-size: 8rem;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }

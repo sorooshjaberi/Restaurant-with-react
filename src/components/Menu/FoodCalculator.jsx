@@ -14,7 +14,7 @@ const addHandler =() => {
         <label htmlFor="amount" className="amountLabel">
           Amount
         </label>
-        <input ref={input} min='1' type="number" name="amount" id="" className="amountInput"  />
+        <input ref={input} type="number" name="amount" id="" className="amountInput"  />
       </div>
       <a onClick={addHandler} className="amountButton">+ Add</a>
     </div>
