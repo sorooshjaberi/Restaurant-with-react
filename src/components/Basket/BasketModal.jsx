@@ -19,7 +19,7 @@ const BasketModal = (props) => {
       {menu}
       {props.data.length>0 && <div className="BItemTotal">
         <div className="BItemTotal__text">&lArr; Total</div>
-        <div className="BItemTotal__amount">{total}</div>
+        <div className="BItemTotal__amount">${total}</div>
       </div>}
       <div className="buttonsContainerBasket">
         <a onClick={props.onClose} className="basketButton">
