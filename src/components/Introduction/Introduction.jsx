@@ -1,13 +1,20 @@
 import React from "react";
-import './Introduction.scss'
+import "./Introduction.scss";
 const Introduction = () => {
   return (
     <div className="intro">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Non eligendi
-      tenetur accusantium. Asperiores repellendus odio quasi eum autem quia
-      debitis libero tempore repellat ea quo blanditiis, minus veniam
-      repudiandae possimus! Quam rerum doloribus est. Vitae harum deleniti
-      accusantium deserunt tenetur!
+        <h2>A React Restaurant</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Quibusdam,quos! Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Non, doloribus!
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis
+        impedit earum eum laboriosam ipsam quas neque in quisquam recusandae
+        voluptate dolore voluptatibus, quidem laudantium perferendis fugiat
+        repellat numquam qui officia.
+      </p>
     </div>
   );
 };

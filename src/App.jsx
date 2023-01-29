@@ -7,6 +7,7 @@ import Menu from "./components/Menu/Menu";
 import Introduction from "./components/Introduction/Introduction";
 const App = () => {
   const [cart, setCart] = useState([]);
+  // const onAddBasket = 
   const addHandler = (obj) => {
     const ourFoodIndex = cart.findIndex((food) => {
       return food.id === obj.id;
@@ -23,7 +24,7 @@ const App = () => {
   };
   return (
     <div className={Styles.app}>
-      <Navigation foods = {cart} />
+      <Navigation onAdd={addHandler} onSub={addHandler} foods = {cart} />
       <Landing />
       <Introduction/>
       <Menu addHandler={addHandler} />

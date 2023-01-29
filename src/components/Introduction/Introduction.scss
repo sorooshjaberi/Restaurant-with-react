@@ -1,15 +1,23 @@
-.intro{
-    background-color: #333;
-    padding: 2rem ;
-    width: 70%;
-    height: auto;
-    color: #eee;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 20px ;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 2rem;
-    text-align: start;
-    margin-top: -5rem;
-    border-radius: 3rem;
-    z-index: 5;
+.intro {
+  background-color: #333;
+  padding: 2rem;
+  width: 70%;
+  height: auto;
+  color: #eee;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 20px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 2rem;
+  text-align: start;
+  margin-top: -5rem;
+  border-radius: 3rem;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  p {
+    text-align: center;
+  }
 }
