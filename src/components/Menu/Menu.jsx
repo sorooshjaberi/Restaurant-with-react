@@ -37,4 +37,4 @@ const Menu = (props) => {
   </div>;
 };
 
-export default Menu;
+export default React.memo(Menu);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useState } from "react";
 import Styles from "./App.module.scss";
 import Landing from "./components/Landing/Landing";
@@ -8,7 +8,7 @@ import Introduction from "./components/Introduction/Introduction";
 import { useEffect } from "react";
 const App = () => {
   const [cart, setCart] = useState([]);
-  const addHandler = (obj) => {
+  const addHandler = useCallback((obj) => {
     //was the food selected before?
     const ourFoodIndex = cart.findIndex((food) => {
       return food.id === obj.id;
@@ -30,7 +30,7 @@ const App = () => {
         setCart([...newCart])
       }
     }
-  };
+  },[cart]);
   useEffect(() => {
     if (cart.length !== 0)
       localStorage.setItem("ourItems", JSON.stringify(cart));
