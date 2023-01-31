@@ -1,0 +1,84 @@
+.form {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10%;
+  width: 70%;
+  background-color: #fff;
+  height: 50rem;
+  border-radius: 2rem;
+  padding: 4rem;
+  position: relative;
+  &__content {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 70%;
+
+    &__inputGroup {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-right: 2rem;
+      align-items: center;
+      transition: 0.5s ease all;
+      &.invalid {
+        label {
+          color: red;
+        }
+        input {
+          background-color: salmon;
+        }
+      }
+      label {
+        font-size: 1.75rem;
+        color: #902d09;
+        transition: inherit;
+      }
+      input {
+        transition: inherit;
+        outline: none;
+        border: none;
+        border-bottom: 1px #999 solid;
+        border-radius: 2rem;
+        height: 5rem;
+        width: 70%;
+        background-color: #eee;
+        padding: 5px 10px;
+        font-size: 2rem;
+      }
+    }
+    &__controllers{
+        display: flex;
+        width: 100%;
+        justify-content: start;
+        transform: translateY(5rem);
+        
+        button{
+            margin: 1rem;
+            width: 8rem;
+            height: 4rem;
+            text-align: center;
+            border-radius: 1rem;
+            border: none;
+            outline: none;
+            background-color: #902d09;
+            color: #eee;
+            font-weight: bold;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all .5s ease;
+            &:hover{
+                background-color: #999;
+            }
+        }
+    }
+  }
+  &__total {
+    font-size: 7rem;
+    position: absolute;
+    bottom: 12rem;
+    right: 5rem;
+  }
+}
