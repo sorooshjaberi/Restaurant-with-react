@@ -29,12 +29,12 @@ const BasketModal = (props) => {
         </div>
       )}
       <div className="buttonsContainerBasket">
-        <a onClick={props.onClose} className="basketButton">
-          <span>Close</span>
+        <a onClick={props.onClose} className="basketButton closer">
+          <span onClick={props.onClose} className="closer">Close</span>
         </a>
         {props.data.length > 0 && (
-          <a onClick={payHandler} className="basketButton pay">
-            <span>Order</span>
+          <a  onClick={payHandler} className="basketButton pay ">
+            <span className="">Order</span>
           </a>
         )}
       </div>
@@ -43,7 +43,7 @@ const BasketModal = (props) => {
   return (
     <>
       {!showPay && basket}
-      {showPay && <OrderForm data={props.data} total={total} />}
+      {showPay && <OrderForm onClose={props.onClose} data={props.data} total={total} />}
     </>
   );
 };

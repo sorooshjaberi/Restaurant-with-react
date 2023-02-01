@@ -1,10 +1,11 @@
 import React from "react";
 import Form from "./Form";
 import "./OrderForm.scss";
-const OrderForm = ({ total, data }) => {
+const OrderForm = ({onClose, total, data }) => {
+  console.log(onClose);
   return (
     <div className="form">
-      <Form total={total} orderData={data} />
+      <Form onClose = {onClose} total={total} orderData={data} />
     </div>
   );
 };

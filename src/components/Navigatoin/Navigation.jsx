@@ -11,8 +11,14 @@ const Navigation = (props) => {
   const openBasket = () => {
     setShowBasket(true);
   };
-  const closeBasket = () => {
-    setShowBasket(false);
+  const closeBasket = ({ target }) => {
+    const Closers = Array.from(document.querySelectorAll(".closer"));
+    const isCloser = Closers.find((element) => {
+      return element === target;
+    });
+    if (target === document.querySelector(".backDrop") || isCloser) {
+      setShowBasket(false);
+    }
   };
 
   const onAdd = (a) => {
@@ -20,7 +26,7 @@ const Navigation = (props) => {
   };
   const openedBasket = showBasket && (
     <BackDrop onClick={closeBasket}>
-      <BasketModal onClose={closeBasket} onAdd={onAdd}  data={props.foods} />
+      <BasketModal onClose={closeBasket} onAdd={onAdd} data={props.foods} />
     </BackDrop>
   );
 
