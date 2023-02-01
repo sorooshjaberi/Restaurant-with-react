@@ -3,7 +3,7 @@ import "./OrderForm.scss";
 import InputGroup from "./InputGroup";
 import useInput from "../../hooks/useInput";
 import useFetch from "../../hooks/useFetch";
-const Form = ({orderData}) => {
+const Form = ({ total, orderData }) => {
   const {
     blurHandler: nameBlurHandler,
     changeHandler: nameChangeHandler,
@@ -54,12 +54,13 @@ const Form = ({orderData}) => {
     //if all were valid beside being touched => continue
     else if (!isAnyInvalid && isAllTouched) {
       //post data
-const data = {
-  nameInputValue,addressInputValue,numberInputValue,orderData
-}
-      postData(
-data
-      );
+      const data = {
+        nameInputValue,
+        addressInputValue,
+        numberInputValue,
+        orderData,
+      };
+      postData(data);
     }
   };
   return (
@@ -107,6 +108,7 @@ data
       <div className="form__content__controllers">
         <button type="submit">Pay</button>
         <button type="button">Cancel</button>
+        <span className="total">"${total}"</span>
       </div>
     </form>
   );

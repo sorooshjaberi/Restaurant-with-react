@@ -9,7 +9,6 @@
   padding: 4rem;
   position: relative;
   &__content {
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -49,30 +48,35 @@
         font-size: 2rem;
       }
     }
-    &__controllers{
-        display: flex;
-        width: 100%;
-        justify-content: start;
-        transform: translateY(5rem);
-        
-        button{
-            margin: 1rem;
-            width: 8rem;
-            height: 4rem;
-            text-align: center;
-            border-radius: 1rem;
-            border: none;
-            outline: none;
-            background-color: #902d09;
-            color: #eee;
-            font-weight: bold;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all .5s ease;
-            &:hover{
-                background-color: #999;
-            }
+    &__controllers {
+      display: flex;
+      width: 100%;
+      justify-content: start;
+      align-items: center;
+      transform: translateY(5rem);
+
+      button {
+        margin: 1rem;
+        width: 8rem;
+        height: 4rem;
+        text-align: center;
+        border-radius: 1rem;
+        border: none;
+        outline: none;
+        background-color: #902d09;
+        color: #eee;
+        font-weight: bold;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        &:hover {
+          background-color: #999;
         }
+      }
+      .total {
+        margin-left: auto;
+        font-size: 5rem;
+      }
     }
   }
   &__total {
