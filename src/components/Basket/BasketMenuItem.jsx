@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import BItemInfo from "./BItemInfo";
 import BItemCal from "./BItemCal";
 import "./BasketModal.scss";
+import CartContext from "../../Contexts/cartContext";
 
 const BasketMenuItem = (props) => {
+  const CartCtx = useContext(CartContext);
   const pData = props.data;
   const onSub = () => {
     const obj = {
@@ -13,7 +15,7 @@ const BasketMenuItem = (props) => {
       price: pData.price,
       amount: -1,
     };
-    props.onAdd(obj);
+    CartCtx.onAdd(obj);
   };
   const onAdd = () => {
     const obj = {
@@ -23,12 +25,12 @@ const BasketMenuItem = (props) => {
       price: pData.price,
       amount: +1,
     };
-    props.onAdd(obj);
+    CartCtx.onAdd(obj);
   };
   return (
     <div className="BMenuItem">
       <BItemInfo data={props.data} />
-      <BItemCal amount ={props.data.amount} onSub={onSub} onAdd={onAdd}  />
+      <BItemCal amount={props.data.amount} onSub={onSub} onAdd={onAdd} />
     </div>
   );
 };

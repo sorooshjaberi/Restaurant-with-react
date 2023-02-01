@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Nothing from "./Nothing";
 import "./BasketModal.scss";
 import BasketMenuBuilder from "./BasketMenuBuilder";
 import OrderForm from "../OrderForm/OrderForm";
+import CartContext from "../../Contexts/cartContext";
 const BasketModal = (props) => {
+  const CartCtx = useContext(CartContext);
   const [showPay, setShowPay] = useState(false);
-  const onAdd = (a) => {
-    props.onAdd(a);
-  };
   let menu = <Nothing />;
   let total = 0;
   if (props.data.length !== 0) {
-    menu = <BasketMenuBuilder onAdd={onAdd} data={props.data} />;
-    total = props.data.reduce((a, b) => {
+    menu = <BasketMenuBuilder />;
+    total = CartCtx.orderedMeals.reduce((a, b) => {
       return (a += b.amount * b.price);
     }, 0);
   }
@@ -30,10 +29,12 @@ const BasketModal = (props) => {
       )}
       <div className="buttonsContainerBasket">
         <a onClick={props.onClose} className="basketButton closer">
-          <span onClick={props.onClose} className="closer">Close</span>
+          <span onClick={props.onClose} className="closer">
+            Close
+          </span>
         </a>
         {props.data.length > 0 && (
-          <a  onClick={payHandler} className="basketButton pay ">
+          <a onClick={payHandler} className="basketButton pay ">
             <span className="">Order</span>
           </a>
         )}
@@ -43,7 +44,9 @@ const BasketModal = (props) => {
   return (
     <>
       {!showPay && basket}
-      {showPay && <OrderForm onClose={props.onClose} data={props.data} total={total} />}
+      {showPay && (
+        <OrderForm onClose={props.onClose} data={props.data} total={total} />
+      )}
     </>
   );
 };

@@ -1,18 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import CartContext from "../../Contexts/cartContext";
 import BasketMenuItem from "./BasketMenuItem";
 const BasketMenuBuilder = (props) => {
-  const onAdd = (a) => {
-    props.onAdd(a);
-  };
-  const menu = props.data.map((food) => {
-    return (
-      <BasketMenuItem
-        onAdd={onAdd}
-        
-        key={Math.random()}
-        data={food}
-      />
-    );
+  const foodsCtx = useContext(CartContext);
+  const menu = foodsCtx.orderedMeals.map((food) => {
+    return <BasketMenuItem  key={Math.random()} data={food} />;
   });
   return <>{menu}</>;
 };
