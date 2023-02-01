@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./OrderForm.scss";
 import InputGroup from "./InputGroup";
 import useInput from "../../hooks/useInput";
 import useFetch from "../../hooks/useFetch";
+import CartContext from "../../Contexts/cartContext";
 const Form = ({ onClose,total, orderData }) => {
+  const CartCtx = useContext(CartContext)
   const {
     blurHandler: nameBlurHandler,
     changeHandler: nameChangeHandler,
@@ -107,7 +109,7 @@ const Form = ({ onClose,total, orderData }) => {
 
       <div className="form__content__controllers">
         <button type="submit">Pay</button>
-        <button className="closer" onClick={onClose} type="button">
+        <button className="closer" onClick={CartCtx.closeBasket} type="button">
           Cancel
         </button>
         <span className="total">"${total}"</span>

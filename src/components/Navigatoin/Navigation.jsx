@@ -2,11 +2,13 @@ import React from "react";
 import { createPortal } from "react-dom";
 import "./Navigation.scss";
 import CartButton from "./CartButton";
-import Basket from "./Basket";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import BackDrop from "../UI/BackDrop";
 import BasketModal from "../Basket/BasketModal";
+import CartContext from "../../Contexts/cartContext";
 const Navigation = (props) => {
+  const CartCtx = useContext(CartContext);
+
   const [showBasket, setShowBasket] = useState(false);
   const openBasket = () => {
     setShowBasket(true);
@@ -35,7 +37,7 @@ const Navigation = (props) => {
       <h2 className="navBrand">ReactMeals</h2>
       <div className="right-container">
         <CartButton onClick={openBasket} />
-        <Basket foods={props.foods} />
+        <div className="amountNumber">{CartCtx.total}</div>
         {createPortal(openedBasket, document.querySelector(".modal"))}
       </div>
     </nav>

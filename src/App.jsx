@@ -6,9 +6,10 @@ import Navigation from "./components/Navigatoin/Navigation";
 import Menu from "./components/Menu/Menu";
 import Introduction from "./components/Introduction/Introduction";
 import { useEffect } from "react";
-import CartContext from "./Contexts/cartContext";
+import CartContext, { CartContextProvider } from "./Contexts/cartContext";
 const App = () => {
   const [cart, setCart] = useState([]);
+  const [showModal, setShowModal] = useState(false);
   const addHandler = useCallback(
     (obj) => {
       //was the food selected before?
@@ -47,11 +48,17 @@ const App = () => {
     }
   }, []);
   return (
-    <CartContext.Provider 
-      value={{
-        orderedMeals: cart,
-        onAdd: addHandler,
+    <CartContextProvider
+      cart={cart}
+      showBasket={showModal}
+      openBasket={() => {
+        setShowModal(true);
       }}
+      closeBasket={() => {
+        setShowModal(false);
+      }}
+
+      onAdd = {addHandler}
     >
       <div className={Styles.app}>
         <Navigation onAdd={addHandler} onSub={addHandler} foods={cart} />
@@ -59,7 +66,7 @@ const App = () => {
         <Introduction />
         <Menu addHandler={addHandler} />
       </div>
-    </CartContext.Provider>
+    </CartContextProvider>
   );
 };
 

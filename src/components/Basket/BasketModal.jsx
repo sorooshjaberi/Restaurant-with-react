@@ -45,7 +45,7 @@ const BasketModal = (props) => {
     <>
       {!showPay && basket}
       {showPay && (
-        <OrderForm onClose={props.onClose} data={props.data} total={total} />
+        <OrderForm onClose={CartCtx.closeBasket} data={props.data} total={total} />
       )}
     </>
   );

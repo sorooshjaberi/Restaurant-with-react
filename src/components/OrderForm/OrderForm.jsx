@@ -6,7 +6,7 @@ const OrderForm = ({onClose, total, data }) => {
   const CartCtx = useContext(CartContext)
   return (
     <div className="form">
-      <Form onClose = {Cart} total={total} orderData={data} />
+      <Form onClose = {CartCtx.orderedMeals} total={total} orderData={data} />
     </div>
   );
 };
