@@ -2,7 +2,8 @@ import React from "react";
 import "./OrderForm.scss";
 import InputGroup from "./InputGroup";
 import useInput from "../../hooks/useInput";
-const Form = () => {
+import useFetch from "../../hooks/useFetch";
+const Form = ({orderData}) => {
   const {
     blurHandler: nameBlurHandler,
     changeHandler: nameChangeHandler,
@@ -41,6 +42,9 @@ const Form = () => {
     addressBlurHandler();
     numberBlurHandler();
   };
+  const postData = async (data) => {
+    console.log(data);
+  };
   const submitHandler = (event) => {
     event.preventDefault();
     //if none or some of inputs were'nt touched
@@ -49,9 +53,14 @@ const Form = () => {
     }
     //if all were valid beside being touched => continue
     else if (!isAnyInvalid && isAllTouched) {
-        //post data
+      //post data
+const data = {
+  nameInputValue,addressInputValue,numberInputValue,orderData
+}
+      postData(
+data
+      );
     }
-    
   };
   return (
     <form className="form__content" onSubmit={submitHandler}>
