@@ -59,7 +59,10 @@
   }
 }
 .scaleAnimation {
+}
+.scaler-enter-active{
   animation: amountButton 0.3s ;
+
 }
 @keyframes amountButton {
   0% {

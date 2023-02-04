@@ -6,7 +6,7 @@ import { useState, useContext } from "react";
 import BackDrop from "../UI/BackDrop";
 import BasketModal from "../Basket/BasketModal";
 import CartContext from "../../Contexts/cartContext";
-import { Transition } from "react-transition-group";
+import { Transition,CSSTransition } from "react-transition-group";
 import Total from "./Total";
 const Navigation = (props) => {
   const CartCtx = useContext(CartContext);
@@ -45,9 +45,9 @@ const Navigation = (props) => {
       <h2 className="navBrand">ReactMeals</h2>
       <div className="right-container">
         <CartButton onClick={openBasket} />
-        <Transition in={totalChanged} timeout={300}>
-          {(state) => <Total state={state} CartCtx={CartCtx} />}
-        </Transition>
+        <CSSTransition in={totalChanged} timeout={300} classNames='scaler'>
+        <Total  CartCtx={CartCtx}  />
+        </CSSTransition>
         {createPortal(openedBasket, document.querySelector(".modal"))}
       </div>
     </nav>
