@@ -1,4 +1,3 @@
-import { SupabaseClient } from "@supabase/supabase-js";
 const useFetch = async ({ method, url, data }) => {
 
   let result = null;
